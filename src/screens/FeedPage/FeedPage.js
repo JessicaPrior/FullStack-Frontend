@@ -15,11 +15,10 @@ const FeedPage = () => {
   const imageList = useRequestData([], `/image/all`)
 
   const renderFeed = () => {
-    return imageList.map((item) => {
+    return imageList.length > 0 && imageList.map((item) => {
       return (
-        <div key = {item.image_id}>
+        <div key={item.image_id}>
           <ImageCard
-            key={item.image_id}
             onClick={() => goToImage(history, item.id)}
             subtitle={item.subtitle}
             author={item.author}
@@ -36,6 +35,7 @@ const FeedPage = () => {
   return (
     <>
       <FeedContainer>
+        <p>Fotos</p>
         {imageList && imageList.length > 0 ? renderFeed() : <Loading />}
       </FeedContainer>
       <AddImageButton color={"primary"} onClick={() => goToAddImage(history)}>

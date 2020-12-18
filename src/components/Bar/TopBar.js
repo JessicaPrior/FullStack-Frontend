@@ -2,14 +2,14 @@ import React from "react";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import { useHistory } from "react-router-dom";
-import { goToFeed, goToLogin } from "../../routes/Coordinator";
+import { goToFeed, goToLogin, goToAddAlbum, goToAlbum } from "../../routes/Coordinator";
 import Button from "@material-ui/core/Button";
-import { AppBarTitle, ButtonsContainer, LogoBar } from "./styled";
+import { AppBarTitle, ButtonsContainer, LogoBar, LogOut, AppBarTitle1 } from "./styled";
 import YpicStandardIcon from '../../assets/YpicStandardIcon.png'
-import Typography from "@material-ui/core/Typography";
+import LogOutIcon from '../../assets/logoutIcon.png'
 
 const TopBar = (props) => {
-  const { buttonName, setButtonName } = props;
+  const { setButtonName } = props;
   const history = useHistory();
 
   const logout = () => {
@@ -33,9 +33,13 @@ const TopBar = (props) => {
             <LogoBar alt={"logo"} src={YpicStandardIcon} />
             <AppBarTitle variant={"h6"}>Ypic</AppBarTitle>
           </Button>
-          <Button color={"inherit"} onClick={appBarAction}>
-            <Typography variant={"h6"}>{buttonName}</Typography>
+          {/* <Button color={"inherit"} onClick={() => goToAddAlbum(history)}>
+            <AppBarTitle1 >Criar Album</AppBarTitle1>
+          </Button> */}
+          <Button color={"inherit"} onClick={() => goToAlbum(history)}>
+            <AppBarTitle1 >Albuns</AppBarTitle1>
           </Button>
+          <LogOut onClick={appBarAction} src={LogOutIcon} />
         </ButtonsContainer>
       </Toolbar>
     </AppBar>

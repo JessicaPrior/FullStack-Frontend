@@ -1,39 +1,49 @@
 import React, { useState } from "react";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
-import { InputsContainer, AddImageFormContainer } from "./styled";
+import { InputsContainer, AddAlbumFormContainer } from "./styled";
 import { useHistory } from "react-router-dom";
 import useForm from "../../hooks/useForm";
-import { addImage } from "../../services/image";
+import { addAlbum } from "../../services/album";
 import CircularProgress from "@material-ui/core/CircularProgress";
 
-const AddImageForm = (props) => {
+const AddAlbumForm = (props) => {
   const history = useHistory();
-  const [form, handleInputChange, resetState ]= useForm({
+  const [form, handleInputChange, resetState] = useForm({
+    title: "",
     subtitle: "",
-    file: "",
-    tags: "",
-    collection: ""
+    image: ""
   });
 
   const [isLoading, setIsLoading] = useState(false);
 
-  const onClickAddImage = (event) => {
+  const onClickAddAlbum = (event) => {
     resetState();
     event.preventDefault();
-    const element = document.getElementById("addimage_form");
+    const element = document.getElementById("addalbum_form");
     const isValid = element.checkValidity();
     element.reportValidity();
     if (isValid) {
-      addImage(form, history, setIsLoading);
+      addAlbum(form, history, setIsLoading);
     }
   };
 
   return (
-    <form id={"addimage_form"}>
-      <AddImageFormContainer>
-      <p>Peencha as informações a baixo para adicionar uma nova foto</p>
+    <form id={"addalbum_form"}>
+      <AddAlbumFormContainer>
+        <p>Peencha as informações a baixo para criar o album</p>
         <InputsContainer>
+          <TextField
+            value={form.title}
+            name={"title"}
+            onChange={handleInputChange}
+            label={"Titulo"}
+            variant={"outlined"}
+            fullWidth
+            required
+            autoFocus
+            margin={"normal"}
+          />
           <TextField
             value={form.subtitle}
             name={"subtitle"}
@@ -42,34 +52,13 @@ const AddImageForm = (props) => {
             variant={"outlined"}
             fullWidth
             required
-            autoFocus
-            margin={"normal"}
-          />
-          <TextField
-            value={form.file}
-            name={"file"}
-            onChange={handleInputChange}
-            label={"Arquivo"}
-            variant={"outlined"}
-            fullWidth
-            required
             margin={"normal"}
           />
           <TextField
             value={form.image}
-            name={"tags"}
+            name={"image"}
             onChange={handleInputChange}
-            label={"Tags"}
-            variant={"outlined"}
-            fullWidth
-            required
-            margin={"normal"}
-          />
-          <TextField
-            value={form.image}
-            name={"collection"}
-            onChange={handleInputChange}
-            label={"collection"}
+            label={"Imagem"}
             variant={"outlined"}
             fullWidth
             required
@@ -77,7 +66,7 @@ const AddImageForm = (props) => {
           />
         </InputsContainer>
         <Button
-          onClick={onClickAddImage}
+          onClick={onClickAddAlbum}
           color={"primary"}
           variant={"contained"}
           type={"submit"}
@@ -87,12 +76,12 @@ const AddImageForm = (props) => {
           {isLoading ? (
             <CircularProgress color={"inherit"} size={24} />
           ) : (
-            <>Adicionar Imagem</>
-          )}
+              <>Adicionar Album</>
+            )}
         </Button>
-      </AddImageFormContainer>
+      </AddAlbumFormContainer>
     </form>
   );
 };
 
-export default AddImageForm;
+export default AddAlbumForm;

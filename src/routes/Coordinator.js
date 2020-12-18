@@ -17,3 +17,15 @@ export const goToAddImage = (history) => {
 export const goToImage = (history, id) => {
   history.push(`/image/${id}`);
 };
+
+export const goToAddAlbum = (history) => {
+  history.push("/album/create");
+};
+
+export const goToAlbum = (history) => {
+  history.push(`/album`);
+};
+
+export const goToAlbumDetails = (history, id) => {
+  history.push(`/album/${id}`);
+};
