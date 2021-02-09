@@ -10,9 +10,10 @@ import { Add } from "@material-ui/icons";
 
 const FeedPage = () => {
   useProtectedPage();
-
+  const token = localStorage.getItem("token");
   const history = useHistory();
-  const imageList = useRequestData([], `/image/all`)
+  const imageList = useRequestData([], `/image/all`);
+
 
   const renderFeed = () => {
     return imageList.length > 0 && imageList.map((item) => {
@@ -33,15 +34,15 @@ const FeedPage = () => {
   };
 
   return (
-    <>
+    <div>
       <FeedContainer>
         <p>Fotos</p>
-        {imageList && imageList.length > 0 ? renderFeed() : <Loading />}
+        <div>{imageList && imageList.length > 0 ? renderFeed() : <Loading />}</div>
       </FeedContainer>
       <AddImageButton color={"primary"} onClick={() => goToAddImage(history)}>
         <Add />
       </AddImageButton>
-    </>
+    </div>
   );
 };
 

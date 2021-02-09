@@ -24,6 +24,21 @@ export const AddAlbumFormContainer = styled.div`
   max-width: 450px;
   align-items: center;
   margin-bottom: 20px;
+  p{
+    font-family: "nova slim";
+  }
+`;
+
+export const AddItemFormContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 80vw;
+  max-width: 450px;
+  align-items: center;
+  margin-bottom: 20px;
+  p{
+    font-family: "nova slim";
+  }
 `;
 
 export const ImageContainer = styled.div`
@@ -33,14 +48,23 @@ export const ImageContainer = styled.div`
   margin-top: 10vh;
 `;
 
-export const DetailContainer = styled.div`
+export const AlbunsContainer = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
-  margin-top: 10vh;
+  margin: 30px;
+  p{
+    text-align: center;
+    font-family: "nova slim";
+    font-size: 4vh;
+  }
+  div{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 `;
 
-export const AlbunsContainer = styled.div`
+export const ItensContainer = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -48,6 +72,13 @@ export const AlbunsContainer = styled.div`
 `;
 
 export const AddAlbumButton = styled(Fab)`
+  position: fixed !important;
+  right: 20px;
+  bottom: 20px;
+  z-index: 3;
+`;
+
+export const AddImageButton = styled(Fab)`
   position: fixed !important;
   right: 20px;
   bottom: 20px;

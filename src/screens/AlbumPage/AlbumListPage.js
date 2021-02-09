@@ -33,7 +33,9 @@ const AlbumPage = () => {
         <>
             <AlbunsContainer>
                 <p>Albuns</p>
-                {albumList && albumList.length > 0 ? renderAlbuns() : <Loading />}
+                <div>
+                    {albumList && albumList.length > 0 ? renderAlbuns() : <Loading />}
+                </div>
             </AlbunsContainer>
             <AddAlbumButton color={"primary"} onClick={() => goToAddAlbum(history)}>
                 <Add />

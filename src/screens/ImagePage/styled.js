@@ -23,6 +23,9 @@ export const AddImageFormContainer = styled.div`
   max-width: 450px;
   align-items: center;
   margin-bottom: 20px;
+  p{
+    font-family: "nova slim";
+  }
 `;
 
 export const ImageContainer = styled.div`

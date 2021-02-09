@@ -1,7 +1,6 @@
 import React from "react";
-import YpicIcon from "../../assets/YpicStandardIcon.png";
 import Button from "@material-ui/core/Button";
-import { ScreenContainer, SignUpButtonContainer, LogoCenter } from "./styled";
+import { ScreenContainer, SignUpButtonContainer } from "./styled";
 import LoginForm from "./LoginForm";
 import { useHistory } from "react-router-dom";
 import { goToSignUp } from "../../routes/Coordinator";
@@ -13,7 +12,6 @@ const LoginPage = (props) => {
 
   return (
     <ScreenContainer>
-      {/* <LogoCenter alt="logo" src={YpicIcon} /> */}
       <LoginForm setButtonName={props.setButtonName} />
       <SignUpButtonContainer>
         <Button

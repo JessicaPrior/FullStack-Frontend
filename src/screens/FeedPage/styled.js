@@ -17,9 +17,18 @@ export const ImageCardContent = styled(CardContent)`
 
 export const FeedContainer = styled.div`
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-direction: column;
   margin: 30px;
+  p{
+    text-align: center;
+    font-family: "nova slim";
+    font-size: 2.9vh;
+  }
+  div{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 `;
 
 export const AddImageButton = styled(Fab)`

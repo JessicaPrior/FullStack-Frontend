@@ -26,6 +26,11 @@ export const goToAlbum = (history) => {
   history.push(`/album`);
 };
 
+export const goToAddItem = (history) => {
+  history.push("/album/add-photo");
+}
+
 export const goToAlbumDetails = (history, id) => {
   history.push(`/album/${id}`);
 };
+

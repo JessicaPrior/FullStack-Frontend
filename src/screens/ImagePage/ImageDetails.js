@@ -12,7 +12,7 @@ const ImageDetails = () => {
   useProtectedPage();
   const { id } = useParams();
   const image = useRequestData([], `/image/${id}`)
-  console.log(image)
+  
   const renderDetail = () => (
     <ScreenContainer>
       <DetailContainer>

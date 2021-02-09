@@ -15,7 +15,7 @@ const ImageCard = (props) => {
           src={props.file}
         />
         <ImageCardContent>
-          <Typography align={"center"}>{props.subtitle.toUpperCase()}</Typography>
+          <Typography align={"center"}>{props.subtitle}</Typography>
         </ImageCardContent>
       </CardActionArea>
     </ImageCardContainer>

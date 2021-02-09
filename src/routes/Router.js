@@ -7,8 +7,9 @@ import ImageDetails from "../screens/ImagePage/ImageDetails";
 import ErrorPage from "../screens/ErrorPage/ErrorPage";
 import AddImagePage from "../screens/ImagePage/AddImagePage";
 import AddAlbumPage from '../screens/AlbumPage/AddAlbumPage';
-import AlbumDetails from '../screens/AlbumPage/AlbumDetails';
-import AlbumListPage from '../screens/AlbumPage/AlbumListPage'
+import AlbumDetailsPage from '../screens/AlbumPage/AlbumDetailsPage';
+import AlbumListPage from '../screens/AlbumPage/AlbumListPage';
+import AddItemPage from '../screens/AlbumPage/AddItemPage'
 
 const Router = (props) => {
   return (
@@ -34,8 +35,11 @@ const Router = (props) => {
       <Route exact path={"/album/create"}>
         <AddAlbumPage setButtonName={props.setButtonName} />
       </Route>
+      <Route exact path={"/album/add-photo"}>
+        <AddItemPage setButtonName={props.setButtonName} />
+      </Route>
       <Route exact path={"/album/:id"}>
-        <AlbumDetails />
+        <AlbumDetailsPage />
       </Route>
       <Route>
         <ErrorPage />

@@ -11,7 +11,7 @@ export const login = (body, history, setButtonName) => {
       setButtonName("Logout");
     })
     .catch((error) => {
-      console.log(error);
+      
       alert("Falha no Login, tente novamente");
     });
 };
@@ -25,7 +25,6 @@ export const signUp = (body, history, setButtonName) => {
       setButtonName("Logout");
     })
     .catch((error) => {
-      console.log(error);
       alert("Falha no Cadastro, tente novamente");
     });
 };

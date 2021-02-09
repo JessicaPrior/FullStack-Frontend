@@ -33,9 +33,9 @@ const TopBar = (props) => {
             <LogoBar alt={"logo"} src={YpicStandardIcon} />
             <AppBarTitle variant={"h6"}>Ypic</AppBarTitle>
           </Button>
-          {/* <Button color={"inherit"} onClick={() => goToAddAlbum(history)}>
+          <Button color={"inherit"} onClick={() => goToAddAlbum(history)}>
             <AppBarTitle1 >Criar Album</AppBarTitle1>
-          </Button> */}
+          </Button>
           <Button color={"inherit"} onClick={() => goToAlbum(history)}>
             <AppBarTitle1 >Albuns</AppBarTitle1>
           </Button>
