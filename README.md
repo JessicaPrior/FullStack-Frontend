@@ -8,7 +8,7 @@ No momento ainda está em construção, algumas funcionalidades não estão func
 Ocorre um erro de propriedade indefinida, porem mesmo assim cria os alguns e adiciona as fotos. <br/>
 
 Este é o link disponível para acessar o projeto sem precisar utilizar o VS Code e comandos:
-- ypic.netlify.app
+- https://ypic.netlify.app
 
 Estrutura UI com telas responsivas e sistema de rotas (Coordinator), sendo elas:
 
