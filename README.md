@@ -4,7 +4,11 @@ Projeto Front-end baseado no google fotos, desenvolvido no curso Full Stack da L
 No momento ainda está em construção, algumas funcionalidades não estão funcionando corretamente, sendo elas: <br/>
 - Criar Albuns
 - Adicionar foto a um album
+
 Ocorre um erro de propriedade indefinida, porem mesmo assim cria os alguns e adiciona as fotos. <br/>
+
+- link:  ypic.netlify.app
+
 Estrutura UI com telas responsivas e sistema de rotas (Coordinator), sendo elas:
 
 - Signup Page / Login Page
